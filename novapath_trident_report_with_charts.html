@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NovaPath TRIDENT Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+    h1, h2 { color: #2c3e50; }
+    .section { margin-bottom: 30px; }
+    .highlight { background-color: #f0f8ff; padding: 10px; border-radius: 6px; }
+    img { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <h1>NovaPath TRIDENT™ Career Assessment Report</h1>
+  <p><strong>Name:</strong> {{ student_name }}<br>
+     <strong>Grade:</strong> {{ grade }}<br>
+     <strong>Date:</strong> {{ test_date }}</p>
+
+  <div class="section">
+    <h2>RIASEC Interest Code</h2>
+    <p>Your RIASEC Code: <strong>{{ RIASEC_CODE }}</strong></p>
+    <ul>
+      <li><strong>{{ Top1 }}</strong>: {{ Top1_Description }}</li>
+      <li><strong>{{ Top2 }}</strong>: {{ Top2_Description }}</li>
+      <li><strong>{{ Top3 }}</strong>: {{ Top3_Description }}</li>
+    </ul>
+    <h3>RIASEC Score Chart</h3>
+    <img src="data:image/png;base64,{{ RIASEC_CHART }}" alt="RIASEC Chart"/>
+  </div>
+
+  <div class="section">
+    <h2>Top 5 Career Matches</h2>
+    <ol>
+      <li>{{ career_1 }} – {{ score_1 }}%</li>
+      <li>{{ career_2 }} – {{ score_2 }}%</li>
+      <li>{{ career_3 }} – {{ score_3 }}%</li>
+      <li>{{ career_4 }} – {{ score_4 }}%</li>
+      <li>{{ career_5 }} – {{ score_5 }}%</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>Personality Traits</h2>
+    <img src="data:image/png;base64,{{ PERSONALITY_CHART }}" alt="Personality Radar"/>
+  </div>
+
+  <div class="section">
+    <h2>Learning Style</h2>
+    <p>Primary: <strong>{{ Primary_Style }}</strong></p>
+    <p>Secondary: <strong>{{ Secondary_Style }}</strong></p>
+    <p class="highlight">{{ Learning_Tips }}</p>
+  </div>
+
+  <div class="section">
+    <h2>Recommended Stream & Tips</h2>
+    <p><strong>Stream Suggestion:</strong> {{ Recommended_Stream }}</p>
+    <ul>
+      <li>{{ Tip1 }}</li>
+      <li>{{ Tip2 }}</li>
+      <li>{{ Tip3 }}</li>
+    </ul>
+  </div>
+</body>
+</html>
